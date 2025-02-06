@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AdoptAFish
+﻿namespace AdoptAFish
 {
-    public class pond
+    public class Tank
     {
-    }
+        const int IdealTankTemperature = 72;
 
-    public class tank
-    {
         public string tankName = "First tank";
-        public Fish fish = new Fish();    
+        public Fish fish = new Fish();
+        public double CurrentTankTemperature = 73.5;
+
 
         public string Information()
         {
             string output = "Tank information:\n";
-            output += $"{tankName} has one fish named {fish.fishName} that is the color {fish.fishColor}. {Environment.NewLine}";
+            output += $"{tankName} has one fish named {fish.FishName} that is the color {fish.FishColor}. {Environment.NewLine}";
             
             return output;
         }

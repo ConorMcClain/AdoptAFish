@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-/*
+﻿/*
 *Adopt a Fish
 *Conor McClain
 *1/28/25
@@ -57,7 +52,11 @@ namespace AdoptAFish
             string name = Console.ReadLine();
             Console.WriteLine("Please enter a color for your fish.");
             string color = Console.ReadLine();
-            player.tank.fish.SetFishProperties(name, color);
+            Console.WriteLine("Please enter an age for your fish.");
+            string fishAge = Console.ReadLine();
+            int fAge = Convert.ToInt32(fishAge);
+            // set the properties
+            player.tank.fish.SetFishProperties(name, color, fAge);
 
 
 

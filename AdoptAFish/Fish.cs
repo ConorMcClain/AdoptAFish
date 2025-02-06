@@ -1,36 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AdoptAFish
+﻿namespace AdoptAFish
 {
     public class Fish
     {
-        public string fishName;
-        public string fishType;
+        public string FishName;
+        public string FishType;
+        public string FishColor;
+        public int FishAge;
+        public int HungerLevel = 0;
+        public int Fulllevel = 10;
+
+        private int maxLevel = 10;
+        private int minLevel = 0;
         private string description;
         private string fishFoodType;
         private int fishFoodAmount;
         private string fishPrimaryColor;
         private string fishTankSizeRequirement;
         private double fishLifespan;
-        public string fishColor;
-
-        public int HungerLevel = 0;
-        public int Fulllevel = 10;
-        private int maxLevel = 10;
-        private int minLevel = 0;
-
-        public Fish(string name, string color, double lifespan)
-        {
-
-        }
 
         public Fish()
         {
 
         }
+
+        public Fish(string name, string color, double lifespan, int age)
+        {
+
+        }
+
+        
 
         public void Eat()
         {
@@ -45,12 +43,12 @@ namespace AdoptAFish
             // {
             //     FullLevel++;
         }
-        public void SetFishProperties(string name, string color)
+        public void SetFishProperties(string name, string color, int age)
         {
             //allow player to change the name and color
-            fishName = name;
-            fishColor = color;
-
+            FishName = name;
+            FishColor = color;
+            FishAge = age;
         }
     }
 
