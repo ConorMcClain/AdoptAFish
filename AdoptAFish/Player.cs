@@ -13,7 +13,7 @@
         //Constructor (No return type) (Exact same name as the class)
         public Player()
         {
-
+       
         }
         // overloaded constructor
         public Player(string name)
@@ -26,10 +26,20 @@
         {
             string output = "";
             output += $"{Name}, you have one tank. Inside the tank is a {tank.fish.FishColor} colored fish named {tank.fish.FishName}.";
+            output += $" You currently have {currency} dollars.";
 
             return output;
         }
 
         #endregion
+
+        public double currency;
+        public Player(double currency)
+        { 
+            this.currency = currency;
+            currency = 0.00;
+        }
+
+
     }
 }

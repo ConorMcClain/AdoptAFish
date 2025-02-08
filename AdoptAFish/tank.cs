@@ -12,9 +12,10 @@
         public string Information()
         {
             string output = "Tank information:\n";
-            output += $"{tankName} has one fish named {fish.FishName} that is the color {fish.FishColor}. {Environment.NewLine}";
+            output += $"{tankName} has one fish named {fish.FishName} that is the color {fish.FishColor} and is {fish.FishAge} years old. The current tank temperature is {CurrentTankTemperature} degrees, the ideal tank temperature is {IdealTankTemperature} degrees. {Environment.NewLine}";
             
             return output;
         }
+
     }
 }
