@@ -1,45 +1,70 @@
-﻿namespace AdoptAFish
+﻿using AdoptAFish;
+
+namespace AdoptAFish
 {
     public class Player
     {
-        #region Properties
         //attributes - C# fields or properties
-        public string Name = "Anonymous PLayer";
+        public string Name = "Anonymous Player";
         public Tank tank = new Tank();
-        #endregion
+        public Tank[] tanks = new Tank[4];
 
         //operations - C# methods
 
-        //Constructor (No return type) (Exact same name as the class)
-        public Player()
-        {
-       
-        }
-        // overloaded constructor
         public Player(string name)
         {
             Name = name;
-        }
+            SetUpTanks();
 
-        #region Methods
+        }
+        public Player()
+        {
+            SetUpTanks();
+        }
+        private void SetUpTanks()
+        {
+            for (int i = 0; i < tanks.Length; i++)
+            {
+                tanks[i] = new Tank() { tankName = $"tank #{i + 1}" };
+            }
+
+            tanks[tanks.Length - 1].Fishes.Remove(tanks[tanks.Length - 1].Fishes[tanks[tanks.Length - 1].Fishes.Count - 1]);
+        }
         public string Information()
         {
             string output = "";
-            output += $"{Name}, you have one tank. Inside the tank is a {tank.fish.FishColor} colored fish named {tank.fish.FishName}.";
-            output += $" You currently have {currency} dollars.";
+            //output += $"{Name}, you have one tank. Inside the tank is a {tanks[0].Fishes[0].FishColor} colored fish named {tanks[0].Fishes[0].FishName}";
+            foreach (Tank tank in tanks)
+            {
+                output += $"{tank.tankName}\n{tank.Information()}";
+            }
+            return output;
+        }
+        public double playercurrency = 0.00;
+
+        public string Currency()
+        {
+            string output = "";
+            output += $"you have {Currency} dollars";
 
             return output;
         }
 
-        #endregion
 
-        public double currency;
-        public Player(double currency)
-        { 
-            this.currency = currency;
-            currency = 0.00;
+        public void Buy(StoreItem item)
+        {
+            if (playercurrency >= item.Price)
+            {
+                playercurrency -= item.Price;
+                // Add item to player inventory logic here 
+                Console.WriteLine($"You bought {item.Name} for {item.Price} which leaves {playercurrency} currency.");
+            }
+            else
+            {
+                Console.WriteLine("Not enough currency to buy this item.");
+            }
         }
 
-
     }
+
 }

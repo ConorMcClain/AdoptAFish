@@ -11,6 +11,7 @@ namespace AdoptAFish
         public string Name = " The Awesome Adoption Agency";
         private int numFish = 3;
         public Player player = new Player();
+        private string? menu;
 
         //A plauer has a tank
         //A fish lives in a tank
@@ -25,6 +26,7 @@ namespace AdoptAFish
             SetFishProperties();
             Console.WriteLine(player.Information());
             Console.WriteLine(player.tank.Information());
+            DisplayMenu();
 
             //concatenation
             //Console.WriteLine("Welcome to" + Name);
@@ -56,10 +58,22 @@ namespace AdoptAFish
             string fishAge = Console.ReadLine();
             int fAge = Convert.ToInt32(fishAge);
             // set the properties
-            player.tank.fish.SetFishProperties(name, color, fAge);
+            player.tank.fish.SetFishProperties(name, color);
 
 
+        }
 
+        public void DisplayMenu()
+        {
+            Console.WriteLine("Main Menu:");
+            Console.WriteLine("Change Name");
+            Console.WriteLine("View Fish");
+            Console.WriteLine("Test Tank Temperature");
+            Console.WriteLine("Raise Tank Temperature");
+            Console.WriteLine("Lower Tank Temperature");
+            Console.WriteLine("Visit The Store");
+            Console.WriteLine("Exit");
+            Console.WriteLine("Enter your choice:");
         }
 
     }

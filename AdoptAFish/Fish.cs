@@ -1,35 +1,84 @@
-﻿namespace AdoptAFish
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using AdoptAFish;
+using System.Security.Cryptography;
+
+namespace AdoptAFish
 {
     public class Fish
     {
-        public string FishName;
-        public string FishType;
-        public string FishColor;
-        public int FishAge;
-        public int HungerLevel = 0;
-        public int Fulllevel = 10;
-
-        private int maxLevel = 10;
-        private int minLevel = 0;
+        private string fishName;
+        private string fishType;
         private string description;
         private string fishFoodType;
         private int fishFoodAmount;
         private string fishPrimaryColor;
         private string fishTankSizeRequirement;
         private double fishLifespan;
+        private double fishPrice;
+        private string fishColor;
+        private int maxLevel = 10;
+        private int minLevel = 0;
 
+        public int HungerLevel = 0;
+        public int FullLevel = 10;
+        public string FishName
+        {
+            get => fishName;
+            set => fishName = value;
+        }
+        public string FishColor { get => fishColor; set => fishColor = value; }
+        public string Description { get => description; set => description = value; }
+        public double Price { get => fishPrice; set => fishPrice = value; }
+
+
+        public Fish(string name, string color, double lifespan)
+        {
+            FishName = name;
+            FishColor = color;
+            fishLifespan = lifespan;
+        }
         public Fish()
         {
+            //new instance of fish - random name, random color
+            FishName = GetRandomName();
+            FishColor = GetRandomColor();
 
         }
-
-        public Fish(string name, string color, double lifespan, int age)
+        private string GetRandomName()
         {
+            string[] names = {
+             "Ann",
+             "Bob",
+             "Carol",
+             "Dustin",
+             "Ella",
+             "Frank",
+             "Gary",
+             "Heather"
+         };
 
+            int max = names.Length;
+            int randomNumber = Library.GetRandomNumber(max);
+            string name = names[randomNumber];
+            return name;
+
+            //return names[Library.GetRandomNumber(names.Length)];
         }
+        private string GetRandomColor()
+        {
+            string[] colors = {
+         "blue",
+         "green",
+         "purple"
+         };
 
-        
-
+            return colors[Library.GetRandomNumber(colors.Length)];
+            //return colors[Library.GetRandomNumber(colors.Length)];
+        }
         public void Eat()
         {
             //HungerLevel = HungerLevel - 1;
@@ -38,18 +87,16 @@
                 HungerLevel--;
             }
 
-            // FullLevel = FullLevel + 1;
-            // if (FullLevel < maxLevel - 1)
-            // {
-            //     FullLevel++;
         }
-        public void SetFishProperties(string name, string color, int age)
+
+
+
+        public void SetFishProperties(string name, string color)
         {
-            //allow player to change the name and color
+            //allow player to change the name and the color
             FishName = name;
             FishColor = color;
-            FishAge = age;
         }
-    }
 
+    }
 }

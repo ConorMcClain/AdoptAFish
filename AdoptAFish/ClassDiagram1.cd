@@ -10,29 +10,22 @@
   <Class Name="AdoptAFish.Fish">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAACAAAAAAAAAAAAAACAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <HashCode>AAAQBAIAEQAAAgAAoCQAAACAAgAAABAAAAAAQAAAAgQ=</HashCode>
       <FileName>Fish.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AdoptAFish.Player">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAAAAAAAAAAAAAAIAAQAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AdoptAFish.AdoptionApplication">
-    <Position X="2" Y="2.5" Width="2.5" />
+    <Position X="7.25" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAABAAAAAQAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAABAAAACAAAAAABAAAAAQAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>AdoptionApplication.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AdoptAFish.tank">
-    <Position X="7" Y="1" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>tank.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
