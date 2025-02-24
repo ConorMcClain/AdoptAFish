@@ -19,5 +19,16 @@ namespace AdoptAFish
             return randomNumberGenerator.Next(min, max);
         }
 
+        public static void Print(string message)
+        {
+            Console.WriteLine(message);
+        }
+
+        public static void Pause()
+        {
+            Print("Press any key to continue");
+            Console.ReadKey();
+        }
+
     }
 }

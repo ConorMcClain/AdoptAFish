@@ -1,4 +1,5 @@
-﻿/*
+﻿using static AdoptAFish.Library;
+/*
 *Adopt a Fish
 *Conor McClain
 *1/28/25
@@ -20,21 +21,19 @@ namespace AdoptAFish
         public void Start()
         {
             //interpolation
-            Console.WriteLine($"{player.Name}, Welcome to {Name}!!!");
+            Console.WriteLine($"{player.Name}, Welcome to ¸.·´¯`·.´¯`·.¸¸.·´¯`·.¸><(((º>{Name}¸.·´¯`·.´¯`·.¸¸.·´¯`·.¸<°))))><!!!");
 
             SetPLayerName();
             SetFishProperties();
             Console.WriteLine(player.Information());
             Console.WriteLine(player.tank.Information());
-            DisplayMenu();
-
-            //concatenation
-            //Console.WriteLine("Welcome to" + Name);
-
-            //Composite formatting
-            //Console.WriteLine("Welcome to {0}, there are {1}", Name, numFish);
-
+          
             Console.ReadKey();
+
+            Console.WriteLine("Type Menu To View Menu");
+            Console.ReadKey();
+            DisplayMenu();
+            GameLoop();
         }
 
         private void SetPLayerName()
@@ -63,19 +62,32 @@ namespace AdoptAFish
 
         }
 
-        public void DisplayMenu()
+        public string DisplayMenu()
         {
-            Console.WriteLine("Main Menu:");
-            Console.WriteLine("Change Name");
-            Console.WriteLine("View Fish");
-            Console.WriteLine("Test Tank Temperature");
-            Console.WriteLine("Raise Tank Temperature");
-            Console.WriteLine("Lower Tank Temperature");
-            Console.WriteLine("Visit The Store");
-            Console.WriteLine("Exit");
-            Console.WriteLine("Enter your choice:");
+            var menuString = string.Empty;
+            menuString = menuString + "Main Menu:\n";
+            menuString = menuString + "Change Name\n";
+            menuString = menuString + "View Fish\n";
+            menuString = menuString + "Test Tank Temperature\n";
+            menuString = menuString + "Raise Tank Temperature\n";
+            menuString = menuString + "Lower Tank Temperature\n";
+            menuString = menuString + "Visit The Store\n";
+            menuString = menuString + "Exit\n";
+            menuString = menuString + "Enter your choice:\n";
+
+            return menuString;
         }
 
+        private void GameLoop()
+        {
+            Console.Clear();
+
+            Print(DisplayMenu());
+
+            string choice = Console.ReadLine();
+
+            GameLoop();
+        }
     }
 
 }
