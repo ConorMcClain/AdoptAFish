@@ -17,7 +17,6 @@ namespace AdoptAFish
         private int fishFoodAmount;
         private string fishPrimaryColor;
         private string fishTankSizeRequirement;
-        private double fishLifespan;
         private double fishPrice;
         private string fishColor;
         private int maxLevel = 10;
@@ -32,22 +31,15 @@ namespace AdoptAFish
         }
         public string FishColor { get => fishColor; set => fishColor = value; }
         public string Description { get => description; set => description = value; }
+        public int FishAge { get; set; }
         public double Price { get => fishPrice; set => fishPrice = value; }
 
 
-        public Fish(string name, string color, double lifespan)
-        {
-            FishName = name;
-            FishColor = color;
-            fishLifespan = lifespan;
-        }
         public Fish()
         {
-            //new instance of fish - random name, random color
-            FishName = GetRandomName();
-            FishColor = GetRandomColor();
 
         }
+
         private string GetRandomName()
         {
             string[] names = {

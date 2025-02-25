@@ -23,21 +23,24 @@ namespace AdoptAFish
         }
         private void SetUpTanks()
         {
-            for (int i = 0; i < tanks.Length; i++)
-            {
-                tanks[i] = new Tank() { tankName = $"tank #{i + 1}" };
-            }
+            tank = new Tank() { TankName = $"tank #1" };
+            //for (int i = 0; i < tanks.Length; i++)
+            //{
+            //tanks[i] = new Tank() { tankName = $"tank #{i + 1}" };
+            //}
 
-            tanks[tanks.Length - 1].Fishes.Remove(tanks[tanks.Length - 1].Fishes[tanks[tanks.Length - 1].Fishes.Count - 1]);
+            //tanks[tanks.Length - 1].Fishes.Remove(tanks[tanks.Length - 1].Fishes[tanks[tanks.Length - 1].Fishes.Count - 1]);
         }
         public string Information()
         {
-            string output = "";
-            //output += $"{Name}, you have one tank. Inside the tank is a {tanks[0].Fishes[0].FishColor} colored fish named {tanks[0].Fishes[0].FishName}";
-            foreach (Tank tank in tanks)
-            {
-                output += $"{tank.tankName}\n{tank.Information()}";
-            }
+            string output = $"{Name}, you have one tank.";
+            ////output += $"{Name}, you have one tank. Inside the tank is a {tanks[0].Fishes[0].FishColor} colored fish named {tanks[0].Fishes[0].FishName}";
+            //foreach (Tank tank in tanks)
+            //{
+            //    output += $"{tank.tankName}\n{tank.Information()}";
+            //}
+
+            //return $"{Name}, you have one tank. Inside the tank is a {tanks[0].Fishes[0].FishColor} colored fish named {tanks[0].Fishes[0].FishName}";
             return output;
         }
         public double playercurrency = 0.00;
